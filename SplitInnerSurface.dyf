@@ -1,0 +1,577 @@
+{
+  "Uuid": "465600d2-540f-42ee-bdb3-277503399a40",
+  "IsCustomNode": true,
+  "Category": "3D-Print",
+  "Description": "",
+  "Name": "SplitInnerSurface",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.ByPatch@Autodesk.DesignScript.Geometry.Curve",
+      "Id": "9752dc95c6964aca9e5843eb8e1c3dcf",
+      "Inputs": [
+        {
+          "Id": "1d73fdb7e82d4773873cef2eb75f1493",
+          "Name": "closedCurve",
+          "Description": "Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "356974ed82b54afa82f2cf4cb60ffc09",
+          "Name": "Surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Erstellt eine Oberfläche durch Ausfüllen des Bereichs innerhalb einer durch die eingegebenen Kurven definierten geschlossenen Begrenzung.\n\nSurface.ByPatch (closedCurve: Curve): Surface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Split@Autodesk.DesignScript.Geometry.Geometry",
+      "Id": "49ed089b250e454899d9ab29282e3cbe",
+      "Inputs": [
+        {
+          "Id": "490d2332cfb84dd7a4e16192d3259060",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b39691f3d5ed429dae641e2fd7c8dd2f",
+          "Name": "other",
+          "Description": "Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "38a9823ce3df49549dc0a15af03c7824",
+          "Name": "Geometry[]",
+          "Description": "Geometry[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Teilt diese Geometrie mithilfe anderer Geometrie als \"Schnittwerkzeug\".\n\nGeometry.Split (other: Geometry): Geometry[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.PerimeterCurves",
+      "Id": "9834ce7bb5fa47c7a4ba15af7c80c6b0",
+      "Inputs": [
+        {
+          "Id": "676428491b4c4fc8ae103bb183115e16",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0c4b29b739a54734bb85e768c28584c0",
+          "Name": "Curve[]",
+          "Description": "Curve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt alle Begrenzungskurven der Oberfläche zurück.\n\nSurface.PerimeterCurves ( ): Curve[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.ByJoinedCurves@Autodesk.DesignScript.Geometry.Curve[],double",
+      "Id": "42b62ea851204f36ad371a3759f99d54",
+      "Inputs": [
+        {
+          "Id": "750a55aa8ecf49138fea67437321490f",
+          "Name": "curves",
+          "Description": "Zur PolyCurve zu verbindende Kurven\n\nCurve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5743dce179d451b8c677cbb411d8f4f",
+          "Name": "joinTolerance",
+          "Description": "Toleranz zur Bestimmung der zulässigen Spaltgröße zwischen den zu verbindenden Kurven\n\ndouble\nVorgabewert : 0.001",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "683577186fee4db5a192e5d9d73e6448",
+          "Name": "PolyCurve",
+          "Description": "PolyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Erstellt eine PolyCurve durch Verbinden von Kurven. Kehrt die Kurve nach Bedarf um, um die Verbindung sicherzustellen. Wählen Sie eine bevorzugte Gelenktoleranz zwischen 1e-6 und 1e-3 Einheiten aus.\n\nPolyCurve.ByJoinedCurves (curves: Curve[], joinTolerance: double = 0.001): PolyCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.Offset@double",
+      "Id": "f6fbe01605ab42608b5c4eb30d0e2aa2",
+      "Inputs": [
+        {
+          "Id": "5b2ebd01aff24a089d4a5413ad44a30d",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "986447d3e2c049df8ac12b36ccb81090",
+          "Name": "distance",
+          "Description": "double\nVorgabewert : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1418714826614ef185954bc5fcd33721",
+          "Name": "Surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Versetzt die Oberfläche in Richtung ihrer Normalen um den angegebenen Abstand.\n\nSurface.Offset (distance: double = 1): Surface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "a79a77e2-e376-432f-bba8-858f9c481941",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "2549bef91a694787a48457bc3ebd0eb7",
+      "Inputs": [
+        {
+          "Id": "267b22d945a144eba200fb2928350c26",
+          "Name": "dict",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1dfe208a2bb34dc4a4981716d2ec39e2",
+          "Name": "perimeter",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "100caf9353014db78c6b6a51509cf119",
+          "Name": "path",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c7a037ffb4fc411fb06bd0687ab8ff24",
+          "Name": "accIdx",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66b559412dfe4a718a2c0c2666195d11",
+          "Name": "reversed",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "010181f58fb34e3f832b1dbb74c615c0",
+          "Name": "numberOfSolids",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a768abb0850e4cabae1e4ef376e13fde",
+          "Name": "counter",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d13cb92803a9416d83b085f2e78cf392",
+          "Name": "nozzleD",
+          "Description": "Rückgabewert",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Extracts dictionary content"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "dict",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "7b2ef40c39d9491682da8ec91b51ed6b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cbf173f308974b1f83dbbb04ef9420c3",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ein Funktionsparameter zur Verwendung mit benutzerdefinierten Blöcken.\r\n\r\nSie können den Typ und den Vorgabewert für den Parameter angeben, z. B.\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "perimeters",
+      "Id": "edd1af7683d448bfa4e7e342e71a607a",
+      "Inputs": [
+        {
+          "Id": "585d2c0680b04f91b81c73371990533f",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Eine Funktionsausgabe zur Verwendung mit benutzerdefinierten Blöcken"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "division",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5524c914302e4a5ba785b282b68414cd",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "37715fd60a49460ea50d0a3f590b06e3",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ein Funktionsparameter zur Verwendung mit benutzerdefinierten Blöcken.\r\n\r\nSie können den Typ und den Vorgabewert für den Parameter angeben, z. B.\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "centerSurface",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "83fd99b6462648c4b21ef1c13ecb1bc6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c9dc50a9bfd04cb3ad35df1169fcb120",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ein Funktionsparameter zur Verwendung mit benutzerdefinierten Blöcken.\r\n\r\nSie können den Typ und den Vorgabewert für den Parameter angeben, z. B.\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "356974ed82b54afa82f2cf4cb60ffc09",
+      "End": "490d2332cfb84dd7a4e16192d3259060",
+      "Id": "7b771cbdfdfc459bbd2bad4cce9b872c"
+    },
+    {
+      "Start": "38a9823ce3df49549dc0a15af03c7824",
+      "End": "676428491b4c4fc8ae103bb183115e16",
+      "Id": "cd309c337f894866943d6be5308b1c6e"
+    },
+    {
+      "Start": "0c4b29b739a54734bb85e768c28584c0",
+      "End": "750a55aa8ecf49138fea67437321490f",
+      "Id": "e07cf7e38b2b48069f797f9c9b80bc62"
+    },
+    {
+      "Start": "683577186fee4db5a192e5d9d73e6448",
+      "End": "585d2c0680b04f91b81c73371990533f",
+      "Id": "876e94da08164d318498f438fd944894"
+    },
+    {
+      "Start": "1418714826614ef185954bc5fcd33721",
+      "End": "b39691f3d5ed429dae641e2fd7c8dd2f",
+      "Id": "8b28a8a6868f449680bc58325cecc74a"
+    },
+    {
+      "Start": "1dfe208a2bb34dc4a4981716d2ec39e2",
+      "End": "1d73fdb7e82d4773873cef2eb75f1493",
+      "Id": "06baae37c55b43babada24611689341a"
+    },
+    {
+      "Start": "cbf173f308974b1f83dbbb04ef9420c3",
+      "End": "267b22d945a144eba200fb2928350c26",
+      "Id": "fa0a1ded618341598f557c35b7114970"
+    },
+    {
+      "Start": "37715fd60a49460ea50d0a3f590b06e3",
+      "End": "986447d3e2c049df8ac12b36ccb81090",
+      "Id": "96c659f12795447e87fd2f00c0ae6b70"
+    },
+    {
+      "Start": "c9dc50a9bfd04cb3ad35df1169fcb120",
+      "End": "5b2ebd01aff24a089d4a5413ad44a30d",
+      "Id": "59166a8f8ecb44f188b9221f732c5b39"
+    }
+  ],
+  "Dependencies": [
+    "a79a77e2-e376-432f-bba8-858f9c481941"
+  ],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Hintergrundvorschau",
+      "EyeX": 7.612311672199894,
+      "EyeY": 3.7805679184180452,
+      "EyeZ": -4.5504185594189241,
+      "LookX": -1.6920533889832736,
+      "LookY": -4.55062008779435,
+      "LookZ": 4.816639453006391,
+      "UpX": -0.16236771630690519,
+      "UpY": 0.87178441369690018,
+      "UpZ": 0.46219980607603545
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": false,
+        "Name": "Surface.ByPatch",
+        "Id": "9752dc95c6964aca9e5843eb8e1c3dcf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 209.95760640361846,
+        "Y": -36.862120929161165
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Geometry.Split",
+        "Id": "49ed089b250e454899d9ab29282e3cbe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 479.35776689332852,
+        "Y": 21.753381970077271
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Surface.PerimeterCurves",
+        "Id": "9834ce7bb5fa47c7a4ba15af7c80c6b0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 743.26401116761076,
+        "Y": 22.541576606516173
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PolyCurve.ByJoinedCurves",
+        "Id": "42b62ea851204f36ad371a3759f99d54",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 973.19719246124532,
+        "Y": 22.871906946778608
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Surface.Offset",
+        "Id": "f6fbe01605ab42608b5c4eb30d0e2aa2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -54.35108508143594,
+        "Y": 204.10055049703487
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "DictToVar",
+        "Id": "2549bef91a694787a48457bc3ebd0eb7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -56.106818968936523,
+        "Y": -35.843266043719836
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "7b2ef40c39d9491682da8ec91b51ed6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -252.55424886813114,
+        "Y": -36.214884033448868
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "edd1af7683d448bfa4e7e342e71a607a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1256.373260980592,
+        "Y": 27.245484314544456
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "5524c914302e4a5ba785b282b68414cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -302.22349889739496,
+        "Y": 309.83212091025024
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "83fd99b6462648c4b21ef1c13ecb1bc6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -351.53591569490334,
+        "Y": 204.27136608663028
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "aa15d94286754c57b01a0a48f514472e",
+        "Title": "Split layers",
+        "Nodes": [
+          "9752dc95c6964aca9e5843eb8e1c3dcf",
+          "49ed089b250e454899d9ab29282e3cbe",
+          "9834ce7bb5fa47c7a4ba15af7c80c6b0",
+          "42b62ea851204f36ad371a3759f99d54",
+          "f6fbe01605ab42608b5c4eb30d0e2aa2",
+          "2549bef91a694787a48457bc3ebd0eb7"
+        ],
+        "Left": -66.106818968936523,
+        "Top": -89.862120929161165,
+        "Width": 1306.3040114301818,
+        "Height": 412.96267142619604,
+        "FontSize": 36.0,
+        "InitialTop": -36.862120929161165,
+        "InitialHeight": 413.23577714144994,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 187.06889223511075,
+    "Y": 300.63112600154108,
+    "Zoom": 0.612283078543345
+  }
+}

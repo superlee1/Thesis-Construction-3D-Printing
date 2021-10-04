@@ -1,0 +1,393 @@
+{
+  "Uuid": "ae4dd947-ca5a-4870-acca-3a069e5881d9",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "PickWall",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "dc43893a3f1143a0ae15ba25a3abe51b",
+      "Inputs": [
+        {
+          "Id": "b3fa6dfbbf3f46468293c4666f6919c9",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9cb0d6b65fc64fa49f6572c4dc3bd983",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.ComboNodes.DSModelElementByCategorySelection, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "735d41fa-3592-4f5c-9c6a-6e4eddde78a0-00253bfa"
+      ],
+      "Id": "fdc87ec563374bc4b15649830ce4d4c9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "45fe8098a3aa474495fe1b628fc1b4bd",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "685bc8bd2f71477fbc993bfc68338e32",
+      "Inputs": [
+        {
+          "Id": "80603c8b71794ac9925ceb44e2c0d566",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d6bba2967ca9450ba6f8048075cd5329",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7babb0a831474bd693b63cf29a3ad913",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Length",
+      "Id": "7da84d42d2da4adfa0ecb7eb680e7dbe",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d39f4cb369bb4168b6df0a0113b50c9a",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "b8b1ca90bfe045718a5650f3017d639b",
+      "Inputs": [
+        {
+          "Id": "5204bc2e9aa2496c9fa01d0443ff4007",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "96ef49aab6734cb3a7c85e1a76c779db",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\n#Import the Revit API\r\nclr.AddReference('RevitAPI')\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\n\r\n#Start scripting here:\r\n\r\nwall = UnwrapElement(IN[0])\r\n\r\n#format = FormatOptions(DisplayUnitType.DUT_METERS)\r\n\r\n#x = UnitUtils.ConvertFromInternalUnits(wall.Width, format)\r\n\r\n#OUT = x\r\n\r\nOUT = wall.Width\r\n",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "2710dc810aab44c388434f3bfe2a827e",
+      "Inputs": [
+        {
+          "Id": "7b592ca4b9f948ccb62cdae87693d94c",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ede14079475c4c3d9a3c457d88a95c23",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.DynamoConvert, CoreNodeModels",
+      "NodeType": "ConvertBetweenUnitsNode",
+      "MeasurementType": "Length",
+      "FromConversion": "Feet",
+      "ToConversion": "Meters",
+      "Id": "d8c997ca7421429cb028e43d2f855227",
+      "Inputs": [
+        {
+          "Id": "f318765141cd4efab3394210055dac6a",
+          "Name": "",
+          "Description": "A numeric value for conversion.",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12df6da406ea4e7e95f62c29d3264246",
+          "Name": "",
+          "Description": "A converted numeric value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Convert between units of measure."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "2d6a6f09a8f44ed59ce2a84e838bc740",
+      "Inputs": [
+        {
+          "Id": "be49c3127d9c41df9498f421858cc99c",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c4f6e8c0a0534130a732d7d712da1fa4",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "9cb0d6b65fc64fa49f6572c4dc3bd983",
+      "End": "80603c8b71794ac9925ceb44e2c0d566",
+      "Id": "0cc2130d8693479684ecd33faaf44f34"
+    },
+    {
+      "Start": "9cb0d6b65fc64fa49f6572c4dc3bd983",
+      "End": "7b592ca4b9f948ccb62cdae87693d94c",
+      "Id": "c5facd5aa4274200926946e8e8752049"
+    },
+    {
+      "Start": "45fe8098a3aa474495fe1b628fc1b4bd",
+      "End": "b3fa6dfbbf3f46468293c4666f6919c9",
+      "Id": "f7f22a6b61f64a20a7215bafa5f530d4"
+    },
+    {
+      "Start": "7babb0a831474bd693b63cf29a3ad913",
+      "End": "5204bc2e9aa2496c9fa01d0443ff4007",
+      "Id": "d8c20069902841ffa78555b47963ff67"
+    },
+    {
+      "Start": "d39f4cb369bb4168b6df0a0113b50c9a",
+      "End": "d6bba2967ca9450ba6f8048075cd5329",
+      "Id": "a554dc375d0548f9bdc7cfed43a0d161"
+    },
+    {
+      "Start": "ede14079475c4c3d9a3c457d88a95c23",
+      "End": "f318765141cd4efab3394210055dac6a",
+      "Id": "0a57af3435464cfda374e804d609df18"
+    },
+    {
+      "Start": "12df6da406ea4e7e95f62c29d3264246",
+      "End": "be49c3127d9c41df9498f421858cc99c",
+      "Id": "d42fed9932ed438995b2013c99d423e0"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "dc43893a3f1143a0ae15ba25a3abe51b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 325.5,
+        "Y": 319.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element By Category",
+        "Id": "fdc87ec563374bc4b15649830ce4d4c9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 47.5,
+        "Y": 329.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "685bc8bd2f71477fbc993bfc68338e32",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 544.5,
+        "Y": 406.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "7da84d42d2da4adfa0ecb7eb680e7dbe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 329.0,
+        "Y": 541.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "b8b1ca90bfe045718a5650f3017d639b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 915.92494782252538,
+        "Y": 416.20213838183156
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "2710dc810aab44c388434f3bfe2a827e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 533.29862715069714,
+        "Y": 677.7492131877176
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Convert Between Units",
+        "Id": "d8c997ca7421429cb028e43d2f855227",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 693.58221755419106,
+        "Y": 682.78988450138354
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "2d6a6f09a8f44ed59ce2a84e838bc740",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1148.625106452195,
+        "Y": 687.62830803888835
+      }
+    ],
+    "Annotations": [],
+    "X": -27.877775878672651,
+    "Y": -119.23068548144892,
+    "Zoom": 0.70856693912300939
+  }
+}
