@@ -1,0 +1,412 @@
+{
+  "Uuid": "983fb36f-5b8c-42c5-9913-52be51d7d45c",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Test",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.ComboNodes.DSModelElementsByCategorySelection, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e972",
+        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e973"
+      ],
+      "Id": "41c8f108f87948479e73cf6610ab9e07",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "980ded79e00c47e7bd2333563cbafc1a",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "17db9f712a8c429480f521d707e5fdd2",
+      "Inputs": [
+        {
+          "Id": "28e3e252f02f4d1ca65f8dceb87df848",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9481f501eb6d426b8928b89a2fe2b271",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8b53ac786e2b4bdf935225de4197e410",
+      "Inputs": [
+        {
+          "Id": "f16727fc4c1d482f94bbb9a670a0736f",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aa350905f6c34a30ba1399d7bf4414f4",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "0b4cb3723b2e4dc2b3e698d2ca417be7",
+      "Inputs": [
+        {
+          "Id": "c6447a0fb286418dab5fb474882a8bfb",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "144fadc8485348b49d2856044d36a61e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "262eed23-8026-4841-a2bc-c4cb597eb769",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "745079aeebb347798744bc4a51bc567b",
+      "Inputs": [
+        {
+          "Id": "c21f3cbf3517430da0cde2c3174020f8",
+          "Name": "dict",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8e7839402c28485b853aa303eaaea33c",
+          "Name": "Elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "62a72f3e87dd46deafc98f684fe01ef1",
+          "Name": "Elements name",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9d44fd415efb47c28937f6ad5ea741bd",
+          "Name": "Error",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9a2c41bf57b549b49918de98611cafe9",
+          "Name": "Error_Text",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Pick wall elelements, evaluate optimization opportunity, adjust layers and thicknesses"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "08f7b0bb-b90e-4288-ada5-e335793c05eb",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "5086cf86a3d0467e9454d6645ac9e739",
+      "Inputs": [
+        {
+          "Id": "4b90fd9105e642228635ff79d978353b",
+          "Name": "Error",
+          "Description": "bool[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e3e2b4d147ce4f1d8f61f9c585857c37",
+          "Name": "Error_Text",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7f1adf7ee094ad89d72e92edde2c188",
+          "Name": "User Inputs",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc53644277024f39b21187119be3ae1e",
+          "Name": "Was Run ",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2dcd00d1d5004ff7ade52c15346298fa",
+          "Name": "Was Cancelled",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Show alerts from the code"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "ce9fb420-fd00-4dd2-a8ae-138352612711",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "1615f69e4eb343199c1450efec3c3185",
+      "Inputs": [
+        {
+          "Id": "e26eda1b4ba04946b851a9bff2e277b8",
+          "Name": "dict",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7684fbc1dc74e41b98c4e8dd8d60361",
+          "Name": "Elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Updating thicknesses of selected elements"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "980ded79e00c47e7bd2333563cbafc1a",
+      "End": "28e3e252f02f4d1ca65f8dceb87df848",
+      "Id": "9ae81e397f0e4b6e9041a111ab24277d"
+    },
+    {
+      "Start": "9481f501eb6d426b8928b89a2fe2b271",
+      "End": "c21f3cbf3517430da0cde2c3174020f8",
+      "Id": "555044a2602b4f2cac68a333e4b0522d"
+    },
+    {
+      "Start": "144fadc8485348b49d2856044d36a61e",
+      "End": "e26eda1b4ba04946b851a9bff2e277b8",
+      "Id": "2587379d70fb488ca628c80fbc49bc36"
+    },
+    {
+      "Start": "8e7839402c28485b853aa303eaaea33c",
+      "End": "c6447a0fb286418dab5fb474882a8bfb",
+      "Id": "42fc3ad3bf6d46549fb817ffebf02306"
+    },
+    {
+      "Start": "62a72f3e87dd46deafc98f684fe01ef1",
+      "End": "f16727fc4c1d482f94bbb9a670a0736f",
+      "Id": "5233f3dbe8e04d989dc69861dd5774ff"
+    },
+    {
+      "Start": "9d44fd415efb47c28937f6ad5ea741bd",
+      "End": "4b90fd9105e642228635ff79d978353b",
+      "Id": "877ad78e96b64518a612b01b411ce71c"
+    },
+    {
+      "Start": "9a2c41bf57b549b49918de98611cafe9",
+      "End": "e3e2b4d147ce4f1d8f61f9c585857c37",
+      "Id": "591c1a63046644a0b96f2c6e6dff0775"
+    }
+  ],
+  "Dependencies": [
+    "262eed23-8026-4841-a2bc-c4cb597eb769",
+    "08f7b0bb-b90e-4288-ada5-e335793c05eb",
+    "ce9fb420-fd00-4dd2-a8ae-138352612711"
+  ],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 7.6491277662801158,
+      "EyeY": 2.5228798293754853,
+      "EyeZ": -0.96074699672261166,
+      "LookX": -0.0025871750924411074,
+      "LookY": -1.3527254522678946,
+      "LookZ": 0.10929396604645181,
+      "UpX": -0.022631029300103293,
+      "UpY": 0.29237170472308116,
+      "UpZ": 0.95603693589305228
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Elements By Category",
+        "Id": "41c8f108f87948479e73cf6610ab9e07",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 168.9363020014315,
+        "Y": 283.424284960249
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "17db9f712a8c429480f521d707e5fdd2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 484.69720980383124,
+        "Y": 314.729952602466
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "8b53ac786e2b4bdf935225de4197e410",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1195.4067050322039,
+        "Y": 111.91400955468737
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "0b4cb3723b2e4dc2b3e698d2ca417be7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1139.058433300198,
+        "Y": 473.89030352644494
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Pick_evaluate_adjust",
+        "Id": "745079aeebb347798744bc4a51bc567b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 737.69819318791986,
+        "Y": 366.04207177421551
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Alert_Popout",
+        "Id": "5086cf86a3d0467e9454d6645ac9e739",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1433.6179891188192,
+        "Y": 338.676452844946
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Update_thicknesses",
+        "Id": "1615f69e4eb343199c1450efec3c3185",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1487.3214565520436,
+        "Y": 519.27247722744153
+      }
+    ],
+    "Annotations": [],
+    "X": -487.47516504378387,
+    "Y": -139.75280627132059,
+    "Zoom": 0.69960019549768049
+  }
+}
