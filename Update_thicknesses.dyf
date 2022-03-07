@@ -1752,6 +1752,56 @@
       ],
       "Replication": "Auto",
       "Description": "Converts a string to an integer or a double.\n\nString.ToNumber (str: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Wall_Thickness",
+      "Id": "dffda9e3b73d4f37b9f90a7ce3fadbe2",
+      "Inputs": [
+        {
+          "Id": "be4cdaf7cdff4b139812ddf95443538a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "349a8941c0ea4b058f9f0c4e907e29b8",
+      "Inputs": [
+        {
+          "Id": "2f4213d2887549fb9b735394724368a8",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cf959316224648ed822e31ecbb01087b",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
     }
   ],
   "Connectors": [
@@ -1971,6 +2021,11 @@
       "Id": "5b386ee510134de594ace2061ba9d6c1"
     },
     {
+      "Start": "f44bf90207d94cf5bd25298223be73d2",
+      "End": "be4cdaf7cdff4b139812ddf95443538a",
+      "Id": "4fe7007c17d243028c5fef267a91dbaa"
+    },
+    {
       "Start": "2d8f4587d9484451bede5eafc643496e",
       "End": "d7cadbcb6585461ab488e9117d71d3a5",
       "Id": "cb951fae4d9444c29585b8717b6bbbb7"
@@ -1982,8 +2037,8 @@
     },
     {
       "Start": "c43b19794f264cf298435f156bc48097",
-      "End": "0e9f56254ded4e9a951886937771c910",
-      "Id": "fc446f4da77a45538ac94c4651458390"
+      "End": "2f4213d2887549fb9b735394724368a8",
+      "Id": "e666833c0787493db09c514fcba723e7"
     },
     {
       "Start": "5940829c9aa84b8b8011d1670ad2e418",
@@ -2034,6 +2089,11 @@
       "Start": "665ef9fee7cb462b8fddcd2f912e5ecc",
       "End": "aba38502793149f7b60b737eed7ec58b",
       "Id": "ae446ddf50374cf8b5493aff42158686"
+    },
+    {
+      "Start": "cf959316224648ed822e31ecbb01087b",
+      "End": "0e9f56254ded4e9a951886937771c910",
+      "Id": "5e079af58660437293d2ae64bcfb50b3"
     }
   ],
   "Dependencies": [
@@ -2086,15 +2146,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": -10.327986717224121,
-      "EyeY": 9.6594657897949219,
-      "EyeZ": 0.33312249183654785,
-      "LookX": 0.025876045227050781,
-      "LookY": -0.11188125610351563,
-      "LookZ": 0.048368215560913086,
-      "UpX": 0.36911675333976746,
-      "UpY": 0.622513473033905,
-      "UpZ": 0.69009411334991455
+      "EyeX": 2.6203432083129883,
+      "EyeY": 4.4928789138793945,
+      "EyeZ": -4.7244095802307129,
+      "LookX": 0.14749932289123535,
+      "LookY": -4.846527099609375,
+      "LookZ": -0.43189048767089844,
+      "UpX": -0.32078235386108817,
+      "UpY": 0.12186934340535845,
+      "UpZ": 0.93927980101295749
     },
     "NodeViews": [
       {
@@ -2154,8 +2214,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 18879.743970114974,
-        "Y": 2760.2200769043352
+        "X": 19079.020385287553,
+        "Y": 2763.210679341119
       },
       {
         "ShowGeometry": true,
@@ -2514,8 +2574,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 18326.443940466535,
-        "Y": 2796.4825938563367
+        "X": 18324.503927299687,
+        "Y": 2851.7729691115296
       },
       {
         "ShowGeometry": true,
@@ -2606,6 +2666,26 @@
         "Excluded": false,
         "X": 17392.700254157335,
         "Y": 3772.0938634445747
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "dffda9e3b73d4f37b9f90a7ce3fadbe2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 19413.470350440995,
+        "Y": 3728.126960115424
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "349a8941c0ea4b058f9f0c4e907e29b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 18873.15122553875,
+        "Y": 2762.1092870394377
       }
     ],
     "Annotations": [
@@ -2635,7 +2715,7 @@
         "Left": 12776.823299564076,
         "Top": 3558.4439400594306,
         "Width": 2152.7472084926248,
-        "Height": 994.21209768544622,
+        "Height": 979.21209768544622,
         "FontSize": 36.0,
         "InitialTop": 3611.4439400594306,
         "InitialHeight": 907.21209768544622,
@@ -2690,13 +2770,13 @@
         "Height": 926.49995854335657,
         "FontSize": 36.0,
         "InitialTop": 3637.1010663877364,
-        "InitialHeight": 903.49995854335657,
+        "InitialHeight": 950.49995854335657,
         "TextblockHeight": 43.0,
         "Background": "#FFA4E1FF"
       }
     ],
-    "X": -3548.9166424962305,
-    "Y": -389.15850770905308,
-    "Zoom": 0.24783028170409566
+    "X": -8025.981831118097,
+    "Y": -1129.0957858651536,
+    "Zoom": 0.46662878254365153
   }
 }
