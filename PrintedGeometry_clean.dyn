@@ -2265,6 +2265,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "713f59bfcbca46dc906dfad3b36eaafe",
+          "Name": "wall_thickness",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15d7cabd27b041d9ab90393b094ce153",
+          "Name": "angle",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Outputs": [
@@ -6342,9 +6360,7 @@
       "SelectedIndex": 686,
       "NodeType": "ExtensionNode",
       "InstanceId": [
-        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e972",
-        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e973",
-        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e975"
+        "54a2c963-1f26-42a2-b41a-9650716875a0-0006e972"
       ],
       "Id": "25a2c917cae245159e9f4291945b030a",
       "Inputs": [],
@@ -6602,6 +6618,59 @@
       "Outputs": [
         {
           "Id": "bd6c567892c3477b916fbb9afb7ed4fb",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 45,
+      "MaximumValue": 75,
+      "MinimumValue": 15,
+      "StepValue": 5,
+      "Id": "f6f63b25638e4c60813fba5d86b85dea",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1c84942f9fd64fba9b5c7544957e2005",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "0c664c097a3f440ca8f3974eb44c8c95",
+      "Inputs": [
+        {
+          "Id": "e03caaf541ea409596e2e8a6e1b7715b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3368fcb01cb647128075e4bd3892d728",
           "Name": "",
           "Description": "Watch contents.",
           "UsingDefaultValue": false,
@@ -7814,6 +7883,21 @@
       "Start": "a81cd7e49f2f4bc88296e557bb065e7a",
       "End": "b3b61fe40e1a4621af4eed1fa02d37a3",
       "Id": "8ccfd6054b714327abbb622e24b76203"
+    },
+    {
+      "Start": "a643e6040f194e29b709177d3d88a2a6",
+      "End": "e03caaf541ea409596e2e8a6e1b7715b",
+      "Id": "6f2d68e26f724573bcaf46ab9a924293"
+    },
+    {
+      "Start": "1c84942f9fd64fba9b5c7544957e2005",
+      "End": "15d7cabd27b041d9ab90393b094ce153",
+      "Id": "e8a9835c394b4031a75aa09050a9b5f0"
+    },
+    {
+      "Start": "3368fcb01cb647128075e4bd3892d728",
+      "End": "713f59bfcbca46dc906dfad3b36eaafe",
+      "Id": "6de8fccb8b634a9992bd93578b72616e"
     }
   ],
   "Dependencies": [
@@ -8557,8 +8641,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -74.529731042895492,
-        "Y": -1616.5038060181239
+        "X": -442.00824647558181,
+        "Y": -1744.2604412876476
       },
       {
         "ShowGeometry": true,
@@ -9207,8 +9291,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": -17.692408321882567,
-        "Y": -1457.3567299389751
+        "X": -31.626312518592727,
+        "Y": -1382.7108145994559
       },
       {
         "ShowGeometry": true,
@@ -9227,8 +9311,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -80.680508900591349,
-        "Y": -1335.305899620691
+        "X": -249.87791700350112,
+        "Y": -1211.8913195926859
       },
       {
         "ShowGeometry": false,
@@ -9369,6 +9453,26 @@
         "Excluded": false,
         "X": -3161.9968155716124,
         "Y": -1571.8873642265205
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "ZigZag angle",
+        "Id": "f6f63b25638e4c60813fba5d86b85dea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -468.89613742692035,
+        "Y": -1623.1895105571111
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "0c664c097a3f440ca8f3974eb44c8c95",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3108.6294550295461,
+        "Y": -1764.7427481255627
       }
     ],
     "Annotations": [
@@ -9542,12 +9646,12 @@
           "396faa9a9fdb4ac6b98ba80adc71eae8"
         ],
         "Left": -1032.061137438664,
-        "Top": -1787.2002271378697,
+        "Top": -1797.2604412876476,
         "Width": 1620.9899277779098,
-        "Height": 697.54997359030426,
+        "Height": 707.61018774008221,
         "FontSize": 36.0,
-        "InitialTop": -1734.2002271378697,
-        "InitialHeight": 543.89432751717868,
+        "InitialTop": -1744.2604412876476,
+        "InitialHeight": 677.36912169496168,
         "TextblockHeight": 43.0,
         "Background": "#FF48B9FF"
       },
@@ -9648,8 +9752,8 @@
         ],
         "Left": -5077.8460318023281,
         "Top": -1787.1654891945941,
-        "Width": 451.50310332774006,
-        "Height": 293.0,
+        "Width": 414.50310332774006,
+        "Height": 242.41293350672981,
         "FontSize": 36.0,
         "InitialTop": -1691.1654891945941,
         "InitialHeight": 146.41293350672981,
@@ -9681,21 +9785,22 @@
         "Title": "Thicknesses update\r\n",
         "Nodes": [
           "0cd93a1bc24c41c4a1c0ed96145b8bba",
-          "343a2ed56d034d989d2ea1cf19b76d63"
+          "343a2ed56d034d989d2ea1cf19b76d63",
+          "0c664c097a3f440ca8f3974eb44c8c95"
         ],
         "Left": -3371.0135440455119,
         "Top": -2020.1153928474714,
-        "Width": 385.01672847389955,
-        "Height": 645.22802862095091,
+        "Width": 350.38408901596586,
+        "Height": 563.22802862095091,
         "FontSize": 36.0,
         "InitialTop": -1924.1153928474714,
-        "InitialHeight": 518.31273814753422,
+        "InitialHeight": 497.22802862095091,
         "TextblockHeight": 86.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": 4855.6386540637659,
-    "Y": 2841.3472310789261,
-    "Zoom": 1.3408173834628139
+    "X": 235.01361926852331,
+    "Y": 3447.8030579951733,
+    "Zoom": 1.8128241343028284
   }
 }
