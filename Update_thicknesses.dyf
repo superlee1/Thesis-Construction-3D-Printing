@@ -679,12 +679,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Enter prefered thickness: \";",
+      "Code": "\"Enter prefered \\n thickness: \";",
       "Id": "4acdf2b06ce5491d8ebdd853fb233315",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "42a6c885296243c18b390d1167cc1638",
+          "Id": "13f445401ecd4270b03947505d2d72da",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1799,9 +1799,9 @@
       "Id": "6ae012971e12434c81fd7067d11a665c"
     },
     {
-      "Start": "42a6c885296243c18b390d1167cc1638",
+      "Start": "13f445401ecd4270b03947505d2d72da",
       "End": "cf6b58ae806046df808ab4033e139a1b",
-      "Id": "4e8bc44308054e938eab1f5af4187ede"
+      "Id": "c555341b2a38475a9de595134f5abf7a"
     },
     {
       "Start": "96d3689f6dd849e19828a073f2cb3761",
@@ -2029,15 +2029,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": -6.7999801635742188,
-      "EyeY": 8.768953800201416,
-      "EyeZ": -3.4800293445587158,
-      "LookX": -2.1095771789550781,
-      "LookY": -7.486574649810791,
-      "LookZ": -0.48149251937866211,
-      "UpX": -0.856787383556366,
-      "UpY": 0.47715857625007629,
-      "UpZ": -0.19553780555725098
+      "EyeX": -3.4940128326416016,
+      "EyeY": 10.874326705932617,
+      "EyeZ": -6.830449104309082,
+      "LookX": -6.0331201553344727,
+      "LookY": -10.43999195098877,
+      "LookZ": 6.6170997619628906,
+      "UpX": -0.4054737389087677,
+      "UpY": 0.79863321781158447,
+      "UpZ": 0.44472026824951172
     },
     "NodeViews": [
       {
@@ -2557,7 +2557,7 @@
         "Height": 394.98277774439794,
         "FontSize": 36.0,
         "InitialTop": 2931.1009951352121,
-        "InitialHeight": 411.62628214710139,
+        "InitialHeight": 415.39894685707941,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
       },
@@ -2616,7 +2616,7 @@
         "Left": 13197.0912464255,
         "Top": 3558.44394005943,
         "Width": 1732.4792616312006,
-        "Height": 928.21209768545032,
+        "Height": 924.21209768545032,
         "FontSize": 36.0,
         "InitialTop": 3611.44394005943,
         "InitialHeight": 907.21209768545032,
@@ -2624,8 +2624,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -25195.479851186283,
-    "Y": -4176.461664925595,
-    "Zoom": 1.4789968742887447
+    "X": -13706.722408455647,
+    "Y": -3328.3046099479893,
+    "Zoom": 0.84494977717675668
   }
 }
